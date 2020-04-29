@@ -2,12 +2,17 @@ extends layout
 
 block layout-content
   div.View.WelcomeView
-    h1.Banner Try this stuff again
+    h1.Banner Orderbot - Shopify App
     div.Message
       div.Title
         h3 an app to help me and others
         h1 shopify ugh
-      span.Details go here
+      span.Details Enter shop url, api key, and password
+      form(method="get" action="/save-credentials")
+        input(type="text", name="user[shop]", placeholder="orderbot-test.myshopify.com")
+        input(type="text", name="user[apikey]", placeholder="SHOPIFYAPIKEY")
+        input(type="password", name="user[password]", placeholder="PASSWORD")
+        input(type="submit", value="SUBMIT")
     div.NavButtons
       a(href="/user")
-          div.NavButton do the thing
+          div.NavButton Do the Thing
